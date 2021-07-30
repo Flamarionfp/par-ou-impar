@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import react, { useState, useEffect } from 'react'
 import './App.css';
 
 function App() {
+
+  const [number, setNumber] = useState(1)
+  const [status, setStatus] = useState('IMPAR')
+
+  function parImpar(n) {
+    if (n % 2 === 0) {
+      return 'PAR'
+    } else {
+      return 'IMPAR'
+    }
+  }
+
+  useEffect(() => {
+    setStatus(parImpar(number))
+  }, [number])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="center" id="changeData">
+        <span className="texto">{number}</span>
+        <span className="texto red">{status}</span>
+      </div>
+
+      <div className="center" id="inputContainer">
+        <input
+          onChange={e => setNumber(e.target.value)}
+          className="input"
+          type="number">
+        </input>
+      </div>
+
     </div>
   );
 }

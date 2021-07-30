@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Par ou Impar",
+  "name": "Par ou Impar",
   "icons": [
     {
       "src": "favicon.ico",

@@ -35,6 +35,16 @@ body {
   border-radius: 5px
 }
 
+#msgContainer {
+  margin-top: 15px;
+  display: none;
+}
+
+#msg {
+  font-size: 18pt;
+
+}
+
 /* Ajuste na Responsividade */
 @media (max-width: 600px) {
   .input {

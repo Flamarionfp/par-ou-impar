@@ -1,15 +1,21 @@
-import react, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css';
 
 function App() {
 
+  //Use State
   const [number, setNumber] = useState(1)
   const [status, setStatus] = useState('IMPAR')
+  const [displayMsg, setDispayMsg] = useState('')
 
   function parImpar(n) {
-    if (n % 2 === 0) {
+    if (n == '') {
+      setDispayMsg('flex')
+    } else if (n % 2 === 0) {
+      setDispayMsg('none')
       return 'PAR'
     } else {
+      setDispayMsg('none')
       return 'IMPAR'
     }
   }
@@ -33,6 +39,15 @@ function App() {
         </input>
       </div>
 
+      <div
+        className="center"
+        id="msgContainer"
+        style={{
+          display: displayMsg
+        }}
+      >
+        <span id="msg">Informe um número</span>
+      </div>
     </div>
   );
 }
